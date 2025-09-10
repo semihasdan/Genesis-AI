@@ -161,6 +161,25 @@ class OrchestratorAgent:
                     }
                 ]
             }
+        elif "hesapmakinesi" in user_goal.lower() or "calculator" in user_goal.lower():
+            return {
+                "branch_name": "feature/calculator-page",
+                "commit_message": "feat: Add calculator web page",
+                "steps": [
+                    {
+                        "agent": "code_generation",
+                        "instruction": "Create a new HTML file src/calculator.html with a fully functional calculator web page. Include CSS styling and JavaScript for calculator functionality. The calculator should support basic operations: addition, subtraction, multiplication, and division."
+                    },
+                    {
+                        "agent": "code_generation",
+                        "instruction": "Create a new CSS file src/calculator.css with styling for the calculator page."
+                    },
+                    {
+                        "agent": "code_generation",
+                        "instruction": "Create a new JavaScript file src/calculator.js with the calculator logic."
+                    }
+                ]
+            }
         else:
             # Generic plan for other tasks
             return {
