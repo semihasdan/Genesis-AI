@@ -32,10 +32,14 @@ genesis-ai/
 ├── requirements.txt
 ├── main.py
 ├── genesis_adk_agent.py
+├── test_calculator.py
 ├── src/
 │   ├── __init__.py
 │   ├── web_app.py
 │   ├── genesis_agent.py
+│   ├── calculator.html
+│   ├── calculator.css
+│   ├── calculator.js
 │   ├── agents/
 │   │   ├── __init__.py
 │   │   ├── orchestrator_agent.py
@@ -113,6 +117,17 @@ genesis-ai/
 6. [OrchestratorAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/orchestrator_agent.py#L10-L70) → [TestingAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/testing_agent.py#L11-L55): "Run the test suite."
 7. If successful: Stage and commit changes.
 
+### Workflow 3: Web Development Task - "Calculator Page Creation"
+
+1. User Goal: "web'de çalışan bir hesapmakinesi sayfası yap" (Create a calculator page that works on the web)
+2. [OrchestratorAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/orchestrator_agent.py#L10-L70) receives goal, creates a plan.
+3. [OrchestratorAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/orchestrator_agent.py#L10-L70) → [GitAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/git_agent.py#L11-L65): "Create a new branch named feature/calculator-page."
+4. [OrchestratorAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/orchestrator_agent.py#L10-L70) → [CodeGenerationAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/code_generation_agent.py#L10-L55): "Create a new HTML file src/calculator.html with a fully functional calculator web page."
+5. [OrchestratorAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/orchestrator_agent.py#L10-L70) → [CodeGenerationAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/code_generation_agent.py#L10-L55): "Create a new CSS file src/calculator.css with styling for the calculator page."
+6. [OrchestratorAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/orchestrator_agent.py#L10-L70) → [CodeGenerationAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/code_generation_agent.py#L10-L55): "Create a new JavaScript file src/calculator.js with the calculator logic."
+7. [OrchestratorAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/orchestrator_agent.py#L10-L70) → [GitAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/git_agent.py#L11-L65): "Stage all changes."
+8. [OrchestratorAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/orchestrator_agent.py#L10-L70) → [GitAgent](file:///Users/semihasdan/Documents/software/python/adk/src/agents/git_agent.py#L11-L65): "Commit changes with message 'feat: Add calculator web page'."
+
 ## Getting Started
 
 1. Install dependencies:
@@ -123,6 +138,11 @@ genesis-ai/
 2. Run an example:
    ```bash
    python examples/factorial_task.py
+   ```
+
+3. Create a calculator page:
+   ```bash
+   python test_calculator.py
    ```
 
 ## Web Interface
