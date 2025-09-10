@@ -22,6 +22,7 @@ Genesis AI is a self-expanding, multi-agent software development framework built
 - Framework: Google Agent Development Kit (ADK)
 - Testing: Pytest
 - Version Control: Git
+- Web Framework: Flask
 
 ## Directory Structure
 
@@ -29,7 +30,12 @@ Genesis AI is a self-expanding, multi-agent software development framework built
 genesis-ai/
 ├── README.md
 ├── requirements.txt
+├── main.py
+├── genesis_adk_agent.py
 ├── src/
+│   ├── __init__.py
+│   ├── web_app.py
+│   ├── genesis_agent.py
 │   ├── agents/
 │   │   ├── __init__.py
 │   │   ├── orchestrator_agent.py
@@ -45,6 +51,7 @@ genesis-ai/
 │   └── utils.py
 ├── tests/
 │   ├── __init__.py
+│   ├── test_agents.py
 │   ├── test_utils.py
 │   ├── test_file_system_tools.py
 │   ├── test_testing_tools.py
@@ -117,6 +124,27 @@ genesis-ai/
    ```bash
    python examples/factorial_task.py
    ```
+
+## Web Interface
+
+The Genesis AI Framework includes a web interface that allows you to interact with the system through a browser.
+
+### Running the Web Interface
+
+To start the web interface, run:
+```bash
+python main.py
+```
+
+Then access the interface at http://127.0.0.1:8000
+
+### Using the ADK Web Command
+
+If you have the ADK web command set up, you can also use it to run the Genesis AI agent:
+```bash
+# If ADK web command is available
+adk web --agent genesis_adk_agent
+```
 
 ## Development Guidelines
 
